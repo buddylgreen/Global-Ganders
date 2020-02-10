@@ -36,6 +36,9 @@ import java.util.Map;
  */
 public class AugmentedImageActivity extends AppCompatActivity {
 
+  private double timeToDetect;
+  private double timeToTrack;
+
   private ArFragment arFragment;
   private ImageView fitToScanView;
 
@@ -82,12 +85,16 @@ public class AugmentedImageActivity extends AppCompatActivity {
         case PAUSED:
           // When an image is in PAUSED state, but the camera is not PAUSED, it has been detected,
           // but not yet tracked.
+          //TODO End one timer here, when the image has been detected but not tracked.
+          //timeToDetect = timer - startTime;
           String text = "Detected Image " + augmentedImage.getIndex();
           SnackbarHelper.getInstance().showMessage(this, text);
           break;
 
         case TRACKING:
           // Have to switch to UI Thread to update View.
+          //TODO End second timer here for when the tag appears on the view.
+          //timeToTrack = timer - startTime;
           fitToScanView.setVisibility(View.GONE);
 
           // Create a new anchor for newly found images.
