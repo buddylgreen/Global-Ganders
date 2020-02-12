@@ -67,7 +67,7 @@ public class AugmentedImageActivity extends AppCompatActivity {
     }
   }
 
-  private static int detect_time = 0;
+  private static long detect_time = 0;
 
   private void showToast(String text) {
     Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
@@ -95,7 +95,10 @@ public class AugmentedImageActivity extends AppCompatActivity {
           // but not yet tracked.
           //TODO End one timer here, when the image has been detected but not tracked.
           //timeToDetect = timer - startTime;
-          String text = "Detected Image " + augmentedImage.getIndex();
+//          String text = "Detected Image " + augmentedImage.getIndex();
+          String text = "Object detected, calibrating tracking.";
+
+          detect_time = System.currentTimeMillis();
 //          SnackbarHelper.getInstance().showMessage(this, text);
           this.showToast(text);
           break;
@@ -113,7 +116,8 @@ public class AugmentedImageActivity extends AppCompatActivity {
             augmentedImageMap.put(augmentedImage, node);
             arFragment.getArSceneView().getScene().addChild(node);
           }
-          text = "Now tracking image. Took {} seconds.";
+          long run_time = System.currentTimeMillis() - detect_time;
+          text = "Now tracking image. Took " + run_time +  " ms.";
           this.showToast(text);
           break;
 
