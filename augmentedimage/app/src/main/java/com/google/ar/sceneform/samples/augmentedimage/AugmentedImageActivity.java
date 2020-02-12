@@ -20,6 +20,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
+
 import com.google.ar.core.AugmentedImage;
 import com.google.ar.core.Frame;
 import com.google.ar.core.TrackingState;
@@ -65,6 +67,12 @@ public class AugmentedImageActivity extends AppCompatActivity {
     }
   }
 
+  private static int detect_time = 0;
+
+  private void showToast(String text) {
+    Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
+  }
+
   /**
    * Registered with the Sceneform Scene object, this method is called at the start of each frame.
    *
@@ -88,7 +96,8 @@ public class AugmentedImageActivity extends AppCompatActivity {
           //TODO End one timer here, when the image has been detected but not tracked.
           //timeToDetect = timer - startTime;
           String text = "Detected Image " + augmentedImage.getIndex();
-          SnackbarHelper.getInstance().showMessage(this, text);
+//          SnackbarHelper.getInstance().showMessage(this, text);
+          this.showToast(text);
           break;
 
         case TRACKING:
@@ -104,6 +113,8 @@ public class AugmentedImageActivity extends AppCompatActivity {
             augmentedImageMap.put(augmentedImage, node);
             arFragment.getArSceneView().getScene().addChild(node);
           }
+          text = "Now tracking image. Took {} seconds.";
+          this.showToast(text);
           break;
 
         case STOPPED:
