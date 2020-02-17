@@ -1,0 +1,9 @@
+arduino.jpg|C:\global-ganders\Global-Ganders\augmentedimage\app\src\main\assets/arduino.jpg
+augmented-images-earth.jpg|C:\global-ganders\Global-Ganders\augmentedimage\app\src\main\assets/augmented-images-earth.jpg
+cc.jpg|C:\global-ganders\Global-Ganders\augmentedimage\app\src\main\assets/cc.jpg
+gm2.jpg|C:\global-ganders\Global-Ganders\augmentedimage\app\src\main\assets/gm2.jpg
+gm3.jpg|C:\global-ganders\Global-Ganders\augmentedimage\app\src\main\assets/gm3.jpg
+gm4.jpg|C:\global-ganders\Global-Ganders\augmentedimage\app\src\main\assets/gm4.jpg
+gm5.jpg|C:\global-ganders\Global-Ganders\augmentedimage\app\src\main\assets/gm5.jpg
+grohman1.jpg|C:\global-ganders\Global-Ganders\augmentedimage\app\src\main\assets/grohman1.jpg
+rosie.jpg|C:\global-ganders\Global-Ganders\augmentedimage\app\src\main\assets/rosie.jpg
